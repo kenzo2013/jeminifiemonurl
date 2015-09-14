@@ -1,6 +1,13 @@
-= label_tag "Url Originale"
-= text_field_tag :val,  @url.name_original_url
-= label_tag "Url minifié"
-= text_field_tag :val,  @url.name_url_minify
-= link_to "Tester", {:controller => "urls", :action => "click", :id => @url.id, :s => @url.name_url_minify}
-= link_to "Nouveau", root_path
+%h1 Adminitration de l'url
+.admin
+  = label_tag "Url Originale:"
+  = text_field_tag :val,  @url.name_original_url, :class => "text_area"
+  %br/
+  %br/
+  %br/
+  = label_tag "Url minifié:"
+  = text_field_tag :val,  @url.name_url_minify, :class => "text_area"
+  %br/
+.links
+  = link_to "Tester", {:controller => "urls", :action => "click", :id => @url.id, :s => @url.name_url_minify},:class => "link"
+  = link_to "Nouveau", root_path, :class => "link"

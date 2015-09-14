@@ -1,5 +1,8 @@
-%h1 Générer votre URL:
-= form_for "", url: urls_path, method: :post do |f|
-  = f.label :url
-  = f.text_field :name_url_minify, :value => params[:name_url_minify] 
-  = f.submit "Minifier l'URL"
+%h1 Générer votre URL
+.form
+  = form_for "", url: urls_path, method: :post do |f|
+    = f.label "url:"
+    = f.text_field :name_url_minify, :value => params[:name_url_minify], :class => "text_area"
+    %br/
+    %br/
+    = f.submit "Minifier l'URL", :class => "submit"
