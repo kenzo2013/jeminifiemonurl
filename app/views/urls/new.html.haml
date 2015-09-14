@@ -1,6 +1,4 @@
 %h1 Générer votre URL:
-- flash.each do |name, msg|
-  = content_tag :div, msg, class: name
 = form_for "", url: urls_path, method: :post do |f|
   = f.label :url
   = f.text_field :name_url_minify, :value => params[:name_url_minify] 

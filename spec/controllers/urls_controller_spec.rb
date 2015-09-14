@@ -42,6 +42,18 @@ RSpec.describe UrlsController, :type => :controller do
       get :admin
       expect(response).to be_success
     end
+    it "find url" do 
+      u=FactoryGirl.create(:url)
+      res=Url.where('id=?',u.id)
+      expect(res).to eq(res)
+    end
+    
+    it "get data for graphic" do
+      a=FactoryGirl.create(:count_access_url)
+      res=CountAccessUrl.get_data_grafic(a.access_url_id)
+      expect(res).to eq(res)
+    end
+    
   end
   
   
@@ -49,6 +61,8 @@ RSpec.describe UrlsController, :type => :controller do
     it "it should create record on database and redirect to another web site" do
       @url = FactoryGirl.create(:url)
       FactoryGirl.create(:access_url, :url => @url)
+      @access_url = FactoryGirl.create(:access_url)
+      FactoryGirl.create(:count_access_url, :access_url => @access_url)
       redirect_to "http://www.incarnationpd.org/"
     end
   end
