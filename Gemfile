@@ -44,13 +44,13 @@ group :development, :test do
   gem 'spring'
   
   gem 'rspec-rails', '~> 3.0'
+  gem "factory_girl_rails"
+  gem "capybara"
 end
 
 gem "haml-rails", "~> 0.9"
-
+gem 'bitly', '~> 0.9.0'
 group :test do
-  gem "factory_girl_rails"
-  gem "capybara"
   gem "guard-rspec"
 end
 

@@ -14,10 +14,9 @@
 ActiveRecord::Schema.define(version: 20150912094115) do
 
   create_table "access_urls", force: :cascade do |t|
-    t.integer  "url_id",       limit: 4
-    t.integer  "count_access", limit: 4, default: 0
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.integer  "url_id",     limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "urls", force: :cascade do |t|

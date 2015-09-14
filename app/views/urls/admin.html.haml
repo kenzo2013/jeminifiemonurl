@@ -1,2 +1,8 @@
-%h1 Urls#admin
-%p Find me in app/views/urls/admin.html.erb
+- flash.each do |name, msg|
+  = content_tag :div, msg, class: name
+= label_tag "Url Originale"
+= text_field_tag :val,  @url.name_original_url
+= label_tag "Url minifié"
+= text_field_tag :val,  @url.name_url_minify
+= link_to "Tester", {:controller => "urls", :action => "click", :id => @url.id, :s => @url.name_url_minify}
+= link_to "Nouveau", root_path

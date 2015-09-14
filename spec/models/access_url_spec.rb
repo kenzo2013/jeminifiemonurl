@@ -1,5 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe AccessUrl, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe AccessUrl do
+  it "should belongs_to url" do
+    should belong_to :url
+  end
 end

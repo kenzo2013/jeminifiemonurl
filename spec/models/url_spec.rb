@@ -1,5 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Url, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Url do
+  it "should have many access url" do
+    should have_many :access_urls
+  end
 end
