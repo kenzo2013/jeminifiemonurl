@@ -2,8 +2,11 @@ require 'rails_helper'
 
 describe "count_access_url" do
     it "count access url" do
-       res= FactoryGirl.create(:count_access_url)
-       expect(res).to eq(res)
+      c= FactoryGirl.create(:count_access_url)
+      res=CountAccessUrl.find_or_create_by(access_url_id: c.id, date: "11-09-15")
+      res.count_click ||= 0
+      res.count_click  += 1
+      res.save
     end
 end
 

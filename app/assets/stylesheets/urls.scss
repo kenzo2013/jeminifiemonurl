@@ -42,12 +42,12 @@
 .admin
 {
   margin-top: 100px;
-  margin-left: 130px;
+  margin-left: 10px;
 }
 
 .links{
   margin-top: 30px;
-  margin-left: 250px;
+  margin-left: 130px;
     
 }
 
@@ -101,4 +101,17 @@ h1{
   text-align: center;
   line-height: 3.1em;
 }
-
+.tab{
+  width: 202px;
+  min-height: 100px;
+  border-radius: 13px;
+  border-color: #87CEEB;
+  border-style: solid;
+  margin-left: 360px;
+  margin-top: -230px;
+}
+.odd{background:   #A9EAFE;}
+.even{ background:  #EFEFEF;}
+h3{
+  text-align: center;
+}

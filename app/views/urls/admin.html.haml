@@ -11,3 +11,17 @@
 .links
   = link_to "Tester", {:controller => "urls", :action => "click", :id => @url.id, :s => @url.name_url_minify},:class => "link"
   = link_to "Nouveau", root_path, :class => "link"
+
+- unless @data.blank?
+  .tab
+    %h3 Nombre de clic sur les 7 derniers jours
+    %table
+      %thead
+        %tr
+          %th{:align => "center",:style=>"text-align: center"} Date
+          %th{:align => "center",:style=>"text-align: center"} Nombre de click 
+          %th
+      - @data.each do |d|
+        %tr.df{:class=>cycle('odd','even')}
+          %td.title{:align => "center"}= d.date
+          %td{:align => "center"}= d.count_click
