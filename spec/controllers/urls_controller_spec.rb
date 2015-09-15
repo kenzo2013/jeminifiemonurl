@@ -11,12 +11,12 @@ RSpec.describe UrlsController, :type => :controller do
   
    describe "create" do
     context "when invalid" do
-    # it "will render new template" do
-       # expect(response).to render_template("new")
-      #end
-      #it "will set flash[:error]" do
-      #  expect(flash[:error]).to be_present 
-      #end
+      it "will render new template" do
+        expect(response).to render_template("new")
+      end
+      it "will set flash[:error]" do
+        expect(flash[:error]).to be_present 
+      end
     end
      context "when valid" do
      it "create short url" do
@@ -28,11 +28,11 @@ RSpec.describe UrlsController, :type => :controller do
         FactoryGirl.create(:url)
       end
       it "redirect to page admin with  id" do
-       redirect_to urls_admin_path(:id)
+        expect(response).to redirect_to(urls_admin_path(:id))
       end
-    # it "will set flash[:notice]" do
-      # expect(flash[:notice]).to be_present 
-     #end
+      it "will set flash[:notice]" do
+        expect(flash[:notice]).to be_present 
+      end
     end
   end
   
@@ -63,7 +63,7 @@ RSpec.describe UrlsController, :type => :controller do
       FactoryGirl.create(:access_url, :url => @url)
       @access_url = FactoryGirl.create(:access_url)
       FactoryGirl.create(:count_access_url, :access_url => @access_url)
-      redirect_to "http://www.incarnationpd.org/"
+      expect(response).to redirect_to("http://www.incarnationpd.org/")
     end
   end
 end
